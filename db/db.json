@@ -1,0 +1,28 @@
+{
+  "addresses": [
+    {
+      "id": 1,
+      "title": "Casa",
+      "street": "Rua Tenente Olderico Gabardo",
+      "complement": "casa 5",
+      "neighborhood": "Xaxim",
+      "city": "Curitiba",
+      "state": "PR",
+      "zipcode": "12345",
+      "created_at": "2024-04-17T12:00:00",
+      "updated_at": "2024-04-17T13:00:00"
+    },
+    {
+      "id": 2,
+      "title": "Casa",
+      "street": "Rua Tenente Olderico Gabardo",
+      "complement": "casa 5",
+      "neighborhood": "Xaxim",
+      "city": "Curitiba",
+      "state": "PR",
+      "zipcode": "12345",
+      "created_at": "2024-04-17T12:00:00",
+      "updated_at": ""
+    }
+  ]
+}
