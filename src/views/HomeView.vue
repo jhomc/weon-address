@@ -27,19 +27,8 @@ export default {
     AddressCard
   },
 
-
-  mounted() {
-     this.fetchData()
-  },
-
   computed: {
     ...mapGetters(['addresses', 'error'])
   },
-
-  methods: {
-    fetchData() {
-      this.$store.dispatch('fetchData');
-    }
-  }
 }
 </script>

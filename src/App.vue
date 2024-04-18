@@ -17,9 +17,19 @@ export default {
   components: {
     Navbar
   },
+  
+  mounted() {
+    this.fetchData()
+  },
 
   data: () => ({
 
   }),
+
+  methods: {
+    fetchData() {
+      this.$store.dispatch('fetchData');
+    }
+  }
 };
 </script>

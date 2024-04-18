@@ -6,8 +6,8 @@
           <p class="mb-0">{{ address.street }} - {{ address.complement }}</p>
           <p class="mb-0">{{ address.neighborhood }} - {{ address.city }} - {{ address.state }}</p>
           <p>CEP: {{ address.zipcode }}</p>
-          <p>Criado em: {{ formatDate(address.created_at) }}</p>
-          <p>Ultima atualização: {{ address.updated_at ? formatDate(address.updated_at) : formatDate(address.created_at) }}</p>
+          <p class="mb-0"><strong>Criado em:</strong> {{ formattedCreatedAt }}</p>
+          <p><strong>Última atualização:</strong>{{formattedUpdatedAt }}</p>
         </v-card-text>
       </v-card>
     </v-flex>
@@ -27,7 +27,7 @@ export default {
       state: String,
       zipcode: String,
       created_at: String,
-      updated_at: String | null
+      updated_at: String
     }
   },
 
@@ -41,14 +41,24 @@ export default {
     
   },
 
+  computed: {
+    formattedCreatedAt() {
+      return this.formatDate(this.address.created_at);
+    },
+    formattedUpdatedAt() {
+      return this.address.updated_at ? this.formatDate(this.address.updated_at) : this.formatDate(this.address.created_at);
+    }
+  },
+
   methods: {
     formatDate(date) {
-      const dateParts = date.split('T')
+      const dateParts = new Date(date).toLocaleString().split(',')
+      
+      const day = dateParts[0]
+      const hour = dateParts[1]
 
-      const formatedDate = dateParts[0].split('-').reverse().join('/')
-      const hours = dateParts[1]
+      return day + ' às ' + hour
 
-      return formatedDate + ' às ' + hours
     }
   },
 };

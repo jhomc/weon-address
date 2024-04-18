@@ -1,7 +1,7 @@
 {
   "addresses": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Casa",
       "street": "Rua Tenente Olderico Gabardo",
       "complement": "casa 5",
@@ -13,16 +13,28 @@
       "updated_at": "2024-04-17T13:00:00"
     },
     {
-      "id": 2,
-      "title": "Casa",
-      "street": "Rua Tenente Olderico Gabardo",
-      "complement": "casa 5",
-      "neighborhood": "Xaxim",
+      "id": "2",
+      "title": "Teste",
+      "street": "Rua Miguel Metnek",
+      "complement": "",
+      "neighborhood": "Pinheirinho",
       "city": "Curitiba",
       "state": "PR",
-      "zipcode": "12345",
+      "zipcode": "81150-220",
       "created_at": "2024-04-17T12:00:00",
-      "updated_at": ""
+      "updated_at": "2024-04-18T02:07:55.814Z"
+    },
+    {
+      "id": "436b",
+      "title": "Trabalho",
+      "zipcode": "81110-200",
+      "street": "Rua Bôrtolo Gusso",
+      "complement": "",
+      "neighborhood": "Capão Raso",
+      "city": "Curitiba",
+      "state": "PR",
+      "created_at": "2024-04-18T01:58:22.681Z",
+      "updated_at": "2024-04-18T01:58:22.681Z"
     }
   ]
 }
