@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="subheading grey--text">Últimos registros</h1>
+    <h1 class="subheading grey--text">{{ $t("message.home") }}</h1>
 
     <v-container class="my-5">
       <v-row class="justify-space-between">

@@ -3,8 +3,8 @@
     <v-app-bar flat app light class="light-blue lighten-5"> 
       <v-app-bar-nav-icon class="secondary--text" @click="drawer = !drawer"></v-app-bar-nav-icon>     
       <v-toolbar-title class="text-center">
-        <span>WeON</span>
-        <span class="font-weight-light">Address</span>
+        <span>{{ $t("message.company")  }}</span>
+        <span class="font-weight-light">{{ $t("message.companySubname")  }}</span>
       </v-toolbar-title>
     </v-app-bar>
 

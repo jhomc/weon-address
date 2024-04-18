@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-btn color="primary" class="mb-4" @click="addNewItem">Novo</v-btn>
+    <v-btn color="primary" class="mb-4" @click="addNewItem">{{ $t("message.new") }}</v-btn>
     <v-data-table :headers="headers" :items="addresses" item-key="id" :search="search" :show-select="false"
       :loading="loading" class="elevation-1" :sort-by="['updated_at']" :sort-desc="true">
       <template v-slot:item.created_at="{ item }">
@@ -18,7 +18,7 @@
     <v-dialog v-model="dialog" max-width="500px">
       <v-card>
         <v-card-title>
-          {{ isNewItem ? 'Novo Endereço' : 'Editar Endereço' }}
+          {{ isNewItem ? $t("message.newAddress") : $t("message.editAddress")  }}
         </v-card-title>
         <v-card-text>
           <v-form ref="form" v-model="valid">
@@ -33,8 +33,8 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="closeDialog">Cancelar</v-btn>
-          <v-btn color="blue darken-1" text @click="saveItem">Salvar</v-btn>
+          <v-btn color="blue darken-1" text @click="closeDialog">{{ $t("message.cancel")  }}</v-btn>
+          <v-btn color="blue darken-1" text @click="saveItem">{{ $t("message.save")  }}</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

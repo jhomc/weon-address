@@ -6,8 +6,8 @@
         <p class="mb-0">{{ address.street }} - {{ address.complement }}</p>
         <p class="mb-0">{{ address.neighborhood }} - {{ address.city }} - {{ address.state }}</p>
         <p>CEP: {{ address.zipcode }}</p>
-        <p class="mb-0"><strong>Criado em:</strong> {{ formattedCreatedAt }}</p>
-        <p><strong>Última atualização:</strong>{{ formattedUpdatedAt }}</p>
+        <p class="mb-0"><strong>{{ $t("message.created_at")  }}:</strong> {{ formattedCreatedAt }}</p>
+        <p><strong>{{ $t("message.updated_at")  }}:</strong>{{ formattedUpdatedAt }}</p>
       </v-card-text>
     </v-card>
   </v-flex>
