@@ -19,7 +19,7 @@ export default {
   },
   
   mounted() {
-    this.fetchData()
+  
   },
 
   data: () => ({
@@ -27,9 +27,6 @@ export default {
   }),
 
   methods: {
-    fetchData() {
-      this.$store.dispatch('address/fetchData');
-    }
   }
 };
 </script>

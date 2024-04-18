@@ -3,12 +3,14 @@ import Vue from 'vue'
 
 const state = {
   addresses: [],
-  error: null
+  error: null,
+  addressTableLoading: null
 }
 
 const getters = {
   addresses: state => state.addresses,
-  error: state => state.error
+  error: state => state.error,
+  addressTableLoading: state => state.addressTableLoading
 }
 const mutations = {
   setAddresses(state, data) {
@@ -16,6 +18,9 @@ const mutations = {
   },
   setError(state, error) {
     state.error = error;
+  },
+  setAddressTableLoading(state, boolean) {
+    state.addressTableLoading = boolean
   },
   addAddress(state, address) {
     state.addresses.push(address);
@@ -35,7 +40,6 @@ const actions = {
     try {
       const response = await api.get('/addresses');
       commit('setAddresses', response.data);
-
     } catch (error) {
       commit('setError', error.message);
     }
@@ -67,6 +71,10 @@ const actions = {
     } catch (error) {
       commit('setError', error.message);
     }
+  },
+  changeAddressTableLoading({ commit }, boolean) {
+    console.log("veio", boolean)
+    commit('setAddressTableLoading', boolean)
   }
 }
 

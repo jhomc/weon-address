@@ -1,18 +1,6 @@
 {
   "addresses": [
     {
-      "id": "1",
-      "title": "Casa",
-      "street": "Rua Tenente Olderico Gabardo",
-      "complement": "casa 5",
-      "neighborhood": "Xaxim",
-      "city": "Curitiba",
-      "state": "PR",
-      "zipcode": "12345",
-      "created_at": "2024-04-17T12:00:00",
-      "updated_at": "2024-04-17T13:00:00"
-    },
-    {
       "id": "2",
       "title": "Teste",
       "street": "Rua Miguel Metnek",
@@ -26,7 +14,7 @@
     },
     {
       "id": "436b",
-      "title": "Trabalho",
+      "title": "Trabalho-Jhon",
       "zipcode": "82210110",
       "street": "Rua Walter Guimarães da Costa",
       "complement": "",
@@ -34,11 +22,11 @@
       "city": "Curitiba",
       "state": "PR",
       "created_at": "2024-04-18T01:58:22.681Z",
-      "updated_at": "2024-04-18T11:24:52.093Z"
+      "updated_at": "2024-04-18T19:42:44.836Z"
     },
     {
       "id": "ab26",
-      "title": "Trabalho 2 ",
+      "title": "Trabalho 70",
       "zipcode": "83323-400",
       "street": "Rua Wanda dos Santos Mallmann",
       "complement": "até 935/936",
@@ -46,7 +34,7 @@
       "city": "Pinhais",
       "state": "PR",
       "created_at": "2024-04-18T10:22:36.353Z",
-      "updated_at": "2024-04-18T10:22:36.353Z"
+      "updated_at": "2024-04-18T18:50:55.016Z"
     },
     {
       "id": "8464",

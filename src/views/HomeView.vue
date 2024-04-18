@@ -22,6 +22,12 @@ export default {
   components: {
     AddressCard
   },
+
+  mounted() {
+    if(this.addresses.length == 0) {
+      this.$store.dispatch('address/fetchData');
+    }
+  },
   
   computed: {
     ...mapGetters('address', ['addresses', 'error']),

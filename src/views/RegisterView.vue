@@ -1,19 +1,16 @@
 <template>
   <v-container>
-    <v-btn color="primary" class="mb-4" @click="addNewItem">{{ $t("message.new") }}</v-btn>
-    <v-data-table :headers="headers" :items="addresses" item-key="id" :search="search" :show-select="false"
-      :loading="loading" class="elevation-1" :sort-by="['updated_at']" :sort-desc="true">
-      <template v-slot:item.created_at="{ item }">
-        {{ formatDate(item.created_at) }}
-      </template>
-      <template v-slot:item.updated_at="{ item }">
-        {{ item.updated_at ? formatDate(item.updated_at) : '-' }}
-      </template>
-      <template v-slot:item.actions="{ item }">
-        <v-icon @click="editItem(item)" class="mr-2">mdi-pencil</v-icon>
-        <v-icon @click="deleteItem(item)">mdi-delete</v-icon>
-      </template>
-    </v-data-table>
+    <data-table
+      :headers="headers"
+      :items="addresses"
+      :search="search"
+      :show-select="false"
+      :sort-by="['updated_at']"
+      :sort-desc="true"
+      @edit="editItem"
+      @delete="deleteItem"
+      >
+    </data-table>
 
     <v-dialog v-model="dialog" max-width="500px">
       <v-card>
@@ -45,8 +42,12 @@
 import { mapState, mapActions } from 'vuex';
 import { debounce } from 'lodash';
 import { viacep } from '@/services/api';
+import DataTable from '@/components/DataTable.vue'
 
 export default {
+  components: {
+    DataTable
+  },
   data() {
     return {
       headers: [
@@ -61,7 +62,7 @@ export default {
       ],
       search: '',
       selectedItems: [],
-      loading: false,
+      //loading: false,
       dialog: false,
       isNewItem: false,
       editedItem: {
@@ -76,14 +77,17 @@ export default {
       valid: true
     };
   },
-  computed: {
-    ...mapState('address', ['addresses']),
-    editedItemIndex() {
-      return this.addresses.indexOf(this.editedItem);
+
+ async mounted() {
+    if(this.addresses.length == 0) {
+      this.fetchDataTable()
     }
   },
+  computed: {
+    ...mapState('address', ['addresses']),
+  },
   methods: {
-    ...mapActions('address', ['addAddress', 'editAddress', 'deleteAddress']),
+    ...mapActions('address', ['addAddress', 'editAddress', 'deleteAddress', 'changeAddressTableLoading', 'fetchData']),
     formatDate(date) {
       return date ? new Date(date).toLocaleString() : '-';
     },
@@ -143,6 +147,14 @@ export default {
       }
 
 
+    },
+
+    async fetchDataTable() {
+      this.changeAddressTableLoading(true)
+
+      await this.fetchData()
+
+      this.changeAddressTableLoading(false)
     }
 
   }
