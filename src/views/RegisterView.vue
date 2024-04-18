@@ -77,13 +77,13 @@ export default {
     };
   },
   computed: {
-    ...mapState(['addresses']),
+    ...mapState('address', ['addresses']),
     editedItemIndex() {
       return this.addresses.indexOf(this.editedItem);
     }
   },
   methods: {
-    ...mapActions(['addAddress', 'editAddress', 'deleteAddress']),
+    ...mapActions('address', ['addAddress', 'editAddress', 'deleteAddress']),
     formatDate(date) {
       return date ? new Date(date).toLocaleString() : '-';
     },

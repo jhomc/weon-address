@@ -22,11 +22,12 @@ export default {
   components: {
     AddressCard
   },
-
+  
   computed: {
-    ...mapGetters(['addresses', 'error']),
+    ...mapGetters('address', ['addresses', 'error']),
 
     latestRegisters() {
+
       const addressArray = [...this.addresses]
       addressArray.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 

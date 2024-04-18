@@ -28,7 +28,7 @@ export default {
 
   methods: {
     fetchData() {
-      this.$store.dispatch('fetchData');
+      this.$store.dispatch('address/fetchData');
     }
   }
 };

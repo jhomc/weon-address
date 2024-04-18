@@ -95,6 +95,18 @@
       "state": "PR",
       "created_at": "2024-04-18T11:26:22.706Z",
       "updated_at": "2024-04-18T11:26:22.706Z"
+    },
+    {
+      "id": "5db2",
+      "title": "Teste 4",
+      "zipcode": "81720110",
+      "street": "Rua Clara Tedesco",
+      "complement": "de 3071/3072 ao fim",
+      "neighborhood": "Xaxim",
+      "city": "Curitiba",
+      "state": "PR",
+      "created_at": "2024-04-18T13:25:23.923Z",
+      "updated_at": "2024-04-18T13:25:23.923Z"
     }
   ]
 }
