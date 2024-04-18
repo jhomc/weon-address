@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ addressTableLoading }}
     <v-data-table :headers="headers" :items="items" item-key="id" :search="search" :show-select="false"
       :loading="addressTableLoading" class="elevation-1" :sort-by="['updated_at']" :sort-desc="true">
       <template v-slot:item.created_at="{ item }">
