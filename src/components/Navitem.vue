@@ -11,8 +11,6 @@
 
 <script>
 export default {
-  name: 'Navitem',
-
   props: {
     icon: String,
     text: String,

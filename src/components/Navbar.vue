@@ -1,6 +1,5 @@
 <template>
   <nav>
-
     <v-app-bar flat app light class="light-blue lighten-5"> 
       <v-app-bar-nav-icon class="secondary--text" @click="drawer = !drawer"></v-app-bar-nav-icon>     
       <v-toolbar-title class="text-center">

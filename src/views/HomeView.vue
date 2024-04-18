@@ -1,14 +1,10 @@
 <template>
   <div>
     <h1 class="subheading grey--text">Últimos registros</h1>
-    
+
     <v-container class="my-5">
       <v-row class="justify-space-between">
-        <AddressCard 
-          v-for="address in addresses" 
-          :key="address.id" 
-          :address="address"
-          >
+        <AddressCard v-for="address in latestRegisters" :key="address.id" :address="address">
         </AddressCard>
       </v-row>
     </v-container>
@@ -28,7 +24,14 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['addresses', 'error'])
+    ...mapGetters(['addresses', 'error']),
+
+    latestRegisters() {
+      const addressArray = [...this.addresses]
+      addressArray.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+      return addressArray.slice(0, 3);
+    }
   },
 }
 </script>

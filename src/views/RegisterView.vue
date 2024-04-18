@@ -1,15 +1,8 @@
 <template>
   <v-container>
     <v-btn color="primary" class="mb-4" @click="addNewItem">Novo</v-btn>
-    <v-data-table
-      :headers="headers"
-      :items="addresses"
-      item-key="id"
-      :search="search"
-      :show-select="false"
-      :loading="loading"
-      class="elevation-1"
-    >
+    <v-data-table :headers="headers" :items="addresses" item-key="id" :search="search" :show-select="false"
+      :loading="loading" class="elevation-1" :sort-by="['updated_at']" :sort-desc="true">
       <template v-slot:item.created_at="{ item }">
         {{ formatDate(item.created_at) }}
       </template>
@@ -31,10 +24,10 @@
           <v-form ref="form" v-model="valid">
             <v-text-field v-model="editedItem.title" label="Título"></v-text-field>
             <v-text-field v-model="editedItem.zipcode" label="CEP" @input="debouncedFetchAddressData"></v-text-field>
-            <v-text-field v-model="editedItem.street" label="Rua" disabled ></v-text-field>
+            <v-text-field v-model="editedItem.street" label="Logradouro" disabled></v-text-field>
             <v-text-field v-model="editedItem.complement" label="Complemento" disabled></v-text-field>
             <v-text-field v-model="editedItem.neighborhood" label="Bairro" disabled></v-text-field>
-            <v-text-field v-model="editedItem.city" label="Cidade" disabled></v-text-field>
+            <v-text-field v-model="editedItem.city" label="UF" disabled></v-text-field>
             <v-text-field v-model="editedItem.state" label="Estado" disabled></v-text-field>
           </v-form>
         </v-card-text>
@@ -59,8 +52,8 @@ export default {
       headers: [
         { text: 'Título', value: 'title' },
         { text: 'Logradouro', value: 'street' },
-        { text: 'Cidade', value: 'city' },
         { text: 'Bairro', value: 'neighborhood' },
+        { text: 'Cidade', value: 'city' },
         { text: 'UF', value: 'state' },
         { text: 'Data de criação', value: 'created_at' },
         { text: 'Ultima atualização', value: 'updated_at' },
@@ -76,11 +69,9 @@ export default {
         zipcode: '',
         street: '',
         complement: '',
-        neighborhood:'',
-        city:'',
+        neighborhood: '',
+        city: '',
         state: ''
-        // Add more properties for other address fields here
-        
       },
       valid: true
     };
@@ -103,7 +94,6 @@ export default {
       this.dialog = true;
       this.isNewItem = false;
       this.editedItem = { ...item };
-      this.editedItem.updated_at = new Date().toISOString();
     },
     deleteItem(item) {
       if (confirm('Are you sure you want to delete this address?')) {
@@ -130,37 +120,29 @@ export default {
       this.isNewItem = true;
       this.dialog = true;
     },
-    debouncedFetchAddressData: debounce(function() {
+    debouncedFetchAddressData: debounce(function () {
       this.fetchAddressData();
     }, 500),
 
     async fetchAddressData() {
-      if(this.editedItem.zipcode.replace('-', '').length != 8) return
-      
+      if (this.editedItem.zipcode.replace('-', '').length != 8) return
+
       try {
         const response = await viacep.get(`/${this.editedItem.zipcode}/json`);
         const addressData = response.data;
 
-        // Update the disabled fields with the retrieved address data
         this.editedItem.street = addressData.logradouro || '';
         this.editedItem.complement = addressData.complemento || '';
         this.editedItem.neighborhood = addressData.bairro || '';
         this.editedItem.city = addressData.localidade || '';
-        this.editedItem.state = addressData.uf || '';
+        this.editedItem.state = addressData.uf || ''
 
-        if(this.isNewItem) {
-          this.editedItem.created_at = new Date().toISOString()
-          this.editedItem.updated_at = new Date().toISOString()
-        } else {
-          this.editedItem.updated_at = new Date().toISOString()
-        }
-        
       } catch (error) {
         console.error('Error fetching address data:', error);
         // Handle error - You can display an error message to the user if needed
       }
-      
-      
+
+
     }
 
   }

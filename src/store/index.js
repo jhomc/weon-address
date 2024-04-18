@@ -45,6 +45,9 @@ export default new Vuex.Store({
     },
     async addAddress({ commit }, newAddress) {
       try {
+        newAddress.created_at = new Date().toISOString()
+        newAddress.updated_at = new Date().toISOString()
+
         const response = await api.post('/addresses', newAddress);
         commit('addAddress', response.data);
       } catch (error) {
@@ -53,6 +56,7 @@ export default new Vuex.Store({
     },
     async editAddress({ commit }, editedAddress) {
       try {
+        editedAddress.updated_at = new Date().toISOString()
         const response = await api.put(`/addresses/${editedAddress.id}`, editedAddress);
         commit('editAddress', response.data);
       } catch (error) {
