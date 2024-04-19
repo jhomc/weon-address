@@ -73,7 +73,6 @@ const actions = {
     }
   },
   changeAddressTableLoading({ commit }, boolean) {
-    console.log("veio", boolean)
     commit('setAddressTableLoading', boolean)
   }
 }
