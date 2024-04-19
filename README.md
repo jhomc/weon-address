@@ -6,6 +6,7 @@ This project was developed as part of a selection process test for the front-end
 
 - VueJS 2
 - Vuetify
+- Vuex
 - Axios
 - Json-server
 - i18n
