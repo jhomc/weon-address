@@ -22,7 +22,7 @@
 
 <script>
 
-import AddressCard from '@/components/AddressCard.vue'
+import AddressCard from '@/components/AddressCard/AddressCard.vue'
 import { mapGetters } from 'vuex';
 
 export default {

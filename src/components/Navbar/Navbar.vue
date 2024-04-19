@@ -17,25 +17,4 @@
   </nav>
 </template>
 
-<script>
-import Navitem from '../components/Navitem.vue'
-export default {
-  components: {
-    Navitem
-  },
-
-  data() {
-    return {
-      drawer: false,
-      links: [
-        {icon: 'mdi-home', text: 'Home', route: '/'},
-        {icon: 'mdi-map-marker', text: 'Cadastrar endereço', route: '/register'}
-      ]
-    }
-  }
-}
-</script>
-
-<style>
-
-</style>
+<script src="./Navbar.js"></script>

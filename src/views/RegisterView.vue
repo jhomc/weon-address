@@ -49,8 +49,8 @@
 import { mapState, mapActions } from 'vuex';
 import { debounce } from 'lodash';
 import { viacep } from '@/services/api';
-import DataTable from '@/components/DataTable.vue'
-import SnackBar from '@/components/SnackBar.vue'
+import DataTable from '@/components/DataTable/DataTable.vue'
+import SnackBar from '@/components/SnackBar/SnackBar.vue'
 
 export default {
   components: {

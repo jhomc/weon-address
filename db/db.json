@@ -95,6 +95,18 @@
       "state": "PR",
       "created_at": "2024-04-19T02:17:28.890Z",
       "updated_at": "2024-04-19T02:17:28.890Z"
+    },
+    {
+      "id": "356f",
+      "title": "Teste 3",
+      "zipcode": "81730110",
+      "street": "Rua Vicente Greboge",
+      "complement": "",
+      "neighborhood": "Boqueirão",
+      "city": "Curitiba",
+      "state": "PR",
+      "created_at": "2024-04-19T10:36:46.708Z",
+      "updated_at": "2024-04-19T10:36:55.426Z"
     }
   ]
 }

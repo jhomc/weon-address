@@ -9,26 +9,4 @@
     </v-list-item>
 </template>
 
-<script>
-export default {
-  props: {
-    icon: String,
-    text: String,
-    route: String
-  },
-
-  data() {
-    return {
-      
-    };
-  },
-
-  mounted() {
-    
-  },
-
-  methods: {
-    
-  },
-};
-</script>
+<script src="./Navitem.js" ></script>
