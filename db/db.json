@@ -143,6 +143,18 @@
       "state": "PR",
       "created_at": "2024-04-19T13:01:30.505Z",
       "updated_at": "2024-04-19T13:01:30.505Z"
+    },
+    {
+      "id": "61f4",
+      "title": "Sera que funciona ?",
+      "zipcode": "81250220",
+      "street": "Rua Roncador",
+      "complement": "",
+      "neighborhood": "Cidade Industrial",
+      "city": "Curitiba",
+      "state": "PR",
+      "created_at": "2024-04-19T13:27:10.144Z",
+      "updated_at": "2024-04-19T13:27:10.144Z"
     }
   ]
 }

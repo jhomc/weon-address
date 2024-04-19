@@ -1,6 +1,6 @@
 <template>
   <v-flex xs12 md3 class="mb-4">
-    <v-card class="fill-height">
+    <v-card class="fill-height" >
       <!-- <v-img
       height="250"
       :src="generateImageSource()"
