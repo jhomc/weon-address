@@ -4,14 +4,14 @@
 
     <v-container>
       <v-row justify="center">
-        <v-col cols="6">
+        <v-col xs="12" md="6">
           <h2 class="subheading grey--text">{{ $t("message.latestRegistries") }}</h2>
         </v-col>
       </v-row>
       <v-row justify="center" class="pa-4" color="blue"> 
-        <v-col cols="6" >
+        <v-col xs="12" md="6" >
           <v-row class="justify-space-between">
-            <AddressCard v-for="address in latestRegisters" :key="address.id" :address="address" :source="src">
+            <AddressCard v-for="address in latestRegisters" :key="address.id" :address="address">
             </AddressCard>
           </v-row>
         </v-col>
@@ -53,6 +53,6 @@ export default {
 
 <style lang="scss">
  .container {
-  margin-top: 20vh;
+  margin-top: 10vh;
  }
 </style>

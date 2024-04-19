@@ -46,9 +46,9 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions, mapGetters } from 'vuex';
 import { debounce } from 'lodash';
-import { viacep } from '@/services/api';
+import { viacep, fetchViacepAddress } from '@/services/viacep';
 import DataTable from '@/components/DataTable/DataTable.vue'
 import SnackBar from '@/components/SnackBar/SnackBar.vue'
 
@@ -94,9 +94,11 @@ export default {
   },
   computed: {
     ...mapState('address', ['addresses']),
+    ...mapGetters('viacep', ['getAddress'])
   },
   methods: {
     ...mapActions('address', ['addAddress', 'editAddress', 'deleteAddress', 'changeAddressTableLoading', 'fetchData']),
+    ...mapActions('viacep', ['fetchViaCepAddress']),
     formatDate(date) {
       return date ? new Date(date).toLocaleString() : '-';
     },
@@ -114,6 +116,11 @@ export default {
       }
     },
     saveItem() {
+      if(this.editedItem.zipcode.replace('-', '').length < 8) {
+        this.$refs.snackbarComponent.showSnackbar('CEP inválido', 'error')
+        return
+      }
+
       if(!this.valid) {
         if (this.editedItem.zipcode.replace('-', '').length > 8) {
           this.$refs.snackbarComponent.showSnackbar('CEP com mais de 8 digitos', 'error')
@@ -140,7 +147,6 @@ export default {
       this.valid = true;
     },
     addNewItem() { 
-     
       this.isNewItem = true;
       this.dialog = true;
     },
@@ -149,7 +155,10 @@ export default {
     }, 500),
 
     async fetchAddressData() {
-      if (this.editedItem.zipcode.replace('-', '').length < 8) return
+      if (this.editedItem.zipcode.replace('-', '').length < 8) {
+        this.valid = false
+        return
+      }
       if (this.editedItem.zipcode.replace('-', '').length > 8) {
         this.$refs.snackbarComponent.showSnackbar('CEP inválido', 'error')
         this.valid = false
@@ -157,7 +166,7 @@ export default {
       } 
 
       try {
-        const response = await viacep.get(`/${this.editedItem.zipcode}/json`);
+        const response = await fetchViacepAddress(this.editedItem.zipcode)
 
         if(response.data.erro) throw new Error()
         const addressData = response.data;

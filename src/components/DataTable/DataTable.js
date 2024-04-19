@@ -12,7 +12,6 @@ export default {
 
   data() {
     return {
-
     };
   },
 
@@ -21,6 +20,14 @@ export default {
   },
   computed: {
     ...mapState('address', ['addressTableLoading']),
+
+    footerText() {
+      const totalItems = this.items.length;
+      const itemsPerPage = this.options.itemsPerPage || 0;
+      const currentPage = this.options.page || 1;
+      const totalPages = Math.ceil(totalItems / itemsPerPage);
+      return `${(currentPage - 1) * itemsPerPage + 1}-${Math.min(currentPage * itemsPerPage, totalItems)} de ${totalItems}`;
+    }
   },
 
   methods: {
