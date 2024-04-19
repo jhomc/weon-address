@@ -1,18 +1,18 @@
 # weon-address
 
 ## Mock setup
-```
 Install json-server if you don't have already
-
-npm install json-server
+```
+npm install -g json-server
 ```
 ## Start json-server
+Json-server will start the mock on port 3000
 ```
 npm run start:server
 ```
 
 
-## Project setup(second terminal)
+## Project setup
 ```
 npm install
 ```
