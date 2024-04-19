@@ -2,10 +2,19 @@
   <div>
     <h1 class="subheading grey--text">{{ $t("message.home") }}</h1>
 
-    <v-container class="my-5">
-      <v-row class="justify-space-between">
-        <AddressCard v-for="address in latestRegisters" :key="address.id" :address="address">
-        </AddressCard>
+    <v-container>
+      <v-row justify="center">
+        <v-col cols="6">
+          <h2 class="subheading grey--text">{{ $t("message.latestRegistries") }}</h2>
+        </v-col>
+      </v-row>
+      <v-row justify="center" class="pa-4" color="blue"> 
+        <v-col cols="6" >
+          <v-row class="justify-space-between">
+            <AddressCard v-for="address in latestRegisters" :key="address.id" :address="address" :source="src">
+            </AddressCard>
+          </v-row>
+        </v-col>
       </v-row>
     </v-container>
   </div>
@@ -33,7 +42,6 @@ export default {
     ...mapGetters('address', ['addresses', 'error']),
 
     latestRegisters() {
-
       const addressArray = [...this.addresses]
       addressArray.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
@@ -42,3 +50,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+ .container {
+  margin-top: 20vh;
+ }
+</style>

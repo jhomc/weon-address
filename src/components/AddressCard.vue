@@ -1,6 +1,10 @@
 <template>
   <v-flex xs12 md3 class="mb-4">
     <v-card class="fill-height">
+      <!-- <v-img
+      height="250"
+      :src="generateImageSource()"
+      ></v-img> -->
       <v-card-text>
         <div class="text-h5">{{ address.title }}</div>
         <p class="mb-0">{{ address.street }} - {{ address.complement }}</p>
@@ -27,18 +31,9 @@ export default {
       state: String,
       zipcode: String,
       created_at: String,
-      updated_at: String
-    }
-  },
-
-  data() {
-    return {
-
-    };
-  },
-
-  mounted() {
-
+      updated_at: String,
+    },
+    source: String
   },
 
   computed: {
@@ -59,6 +54,11 @@ export default {
 
       return day + ' às ' + hour
 
+    },
+ 
+    generateImageSource() {
+      // Generate a unique image URL based on the address data
+      return `https://source.unsplash.com/random/?street=${this.address.street}&address=${this.address.city}&country=Brazil`;
     }
   },
 };

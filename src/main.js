@@ -20,7 +20,10 @@ const messages = {
       created_at: 'Criado em',
       updated_at: 'Última atualização',
       company: 'WeON',
-      companySubname: 'Address'
+      companySubname: 'Address',
+      latestRegistries: 'Últimos Registros',
+      register: 'Cadastrar Endereço',
+      close: 'Fechar'
     }
   },
 }

@@ -2,7 +2,7 @@
   "addresses": [
     {
       "id": "2",
-      "title": "Teste",
+      "title": "Teste 3",
       "street": "Rua Miguel Metnek",
       "complement": "",
       "neighborhood": "Pinheirinho",
@@ -10,7 +10,7 @@
       "state": "PR",
       "zipcode": "81150-220",
       "created_at": "2024-04-17T12:00:00",
-      "updated_at": "2024-04-18T02:07:55.814Z"
+      "updated_at": "2024-04-18T20:58:48.784Z"
     },
     {
       "id": "436b",
@@ -35,18 +35,6 @@
       "state": "PR",
       "created_at": "2024-04-18T10:22:36.353Z",
       "updated_at": "2024-04-18T18:50:55.016Z"
-    },
-    {
-      "id": "8464",
-      "title": "Teste 2",
-      "zipcode": "81210110",
-      "street": "Alameda das Magnólias",
-      "complement": "",
-      "neighborhood": "Campo Comprido",
-      "city": "Curitiba",
-      "state": "PR",
-      "created_at": "2024-04-18T10:30:04.106Z",
-      "updated_at": "2024-04-18T10:30:04.106Z"
     },
     {
       "id": "0808",
@@ -95,6 +83,18 @@
       "state": "PR",
       "created_at": "2024-04-18T13:25:23.923Z",
       "updated_at": "2024-04-18T13:25:23.923Z"
+    },
+    {
+      "id": "9067",
+      "title": "Sei la",
+      "zipcode": "81650-220",
+      "street": "Rua Antônio Schiebel",
+      "complement": "até 1299/1300",
+      "neighborhood": "Boqueirão",
+      "city": "Curitiba",
+      "state": "PR",
+      "created_at": "2024-04-19T02:17:28.890Z",
+      "updated_at": "2024-04-19T02:17:28.890Z"
     }
   ]
 }

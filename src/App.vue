@@ -1,8 +1,8 @@
 <template>
-  <v-app class="grey lighten-4">
+  <v-app class="grey lighten-4 " >
     <Navbar />
 
-    <v-main class="mx-4 mb-4">
+    <v-main class="mx-4 mb-4 page">
       <router-view />
     </v-main>
   </v-app>
@@ -30,3 +30,9 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+ .v-application--wrap {
+    background-image: url('https://weon.com.br/wp-content/uploads/2024/04/Agrupar-45-4.png');
+    background-size: cover ;
+  }
+</style>

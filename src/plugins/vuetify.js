@@ -6,6 +6,6 @@ Vue.use(Vuetify);
 export default new Vuetify({
   theme: {
     primary: '#009ee2',
-    secondary: '#666666'
+    secondary: '#666666',
   }
 });
