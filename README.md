@@ -2,6 +2,14 @@
 
 This project was developed as part of a selection process test for the front-end Vue developer position at WeON company. It consists of an application for address registration with two screens. The first one, "Home," displays the last 3 records, while the second one, "Register Address," presents a table with the registered addresses and a button to add new entries.
 
+## Techs and libs
+
+- VueJS 2
+- Vuetify
+- Axios
+- Json-server
+- i18n
+
 ## Mock setup
 Install json-server if you don't have already
 ```
