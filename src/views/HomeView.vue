@@ -4,12 +4,12 @@
 
     <v-container>
       <v-row justify="center">
-        <v-col xs="12" md="6">
+        <v-col xs="12" md="8">
           <h2 class="subheading grey--text">{{ $t("message.latestRegistries") }}</h2>
         </v-col>
       </v-row>
       <v-row justify="center" class="pa-4" color="blue"> 
-        <v-col xs="12" md="6" >
+        <v-col xs="12" md="8" >
           <v-row class="justify-space-between">
             <AddressCard v-for="address in latestRegisters" :key="address.id" :address="address">
             </AddressCard>
