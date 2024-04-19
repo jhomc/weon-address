@@ -1,6 +1,18 @@
 # weon-address
 
-## Project setup
+## Mock setup
+```
+Install json-server if you don't have already
+
+npm install json-server
+```
+## Start json-server
+```
+npm run start:server
+```
+
+
+## Project setup(second terminal)
 ```
 npm install
 ```
@@ -19,6 +31,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
