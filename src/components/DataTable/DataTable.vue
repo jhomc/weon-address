@@ -9,6 +9,9 @@
       <template v-slot:item.updated_at="{ item }">
         {{ item.updated_at ? formatDate(item.updated_at) : '-' }}
       </template>
+      <template v-slot:item.zipcode="{ item }">
+        {{ item.zipcode ? formatZipcode(item.zipcode) : '-' }}
+      </template>
       <template v-slot:item.actions="{ item }">
         <v-icon @click="editItem(item)" class="mr-2">mdi-pencil</v-icon>
         <v-icon @click="deleteItem(item)">mdi-delete</v-icon>

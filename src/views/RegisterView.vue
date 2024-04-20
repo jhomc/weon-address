@@ -65,6 +65,7 @@ export default {
         { text: 'Bairro', value: 'neighborhood' },
         { text: 'Cidade', value: 'city' },
         { text: 'UF', value: 'state' },
+        {text: 'CEP', value: 'zipcode'},
         { text: 'Data de criação', value: 'created_at' },
         { text: 'Ultima atualização', value: 'updated_at' },
         { text: 'Ações', value: 'actions', sortable: false }

@@ -39,6 +39,16 @@ export default {
     },
     deleteItem(item) {
       this.$emit('delete', item);
+    },
+    formatZipcode(zipcode) {
+      zipcode = zipcode.replace(/\D/g, '');
+
+      if (zipcode.length === 8) {
+        var formattedZipcode = zipcode.slice(0, 5) + '-' + zipcode.slice(5);
+        return formattedZipcode;
+      } else {
+        return null;
+      }
     }
   },
 };
